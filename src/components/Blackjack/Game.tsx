@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import type { Card, Deck } from './gameTypes';
 import { createDeck, drawCard, calculateHandValue } from './utils';
+import Link from 'next/link';
 
 export const BlackjackGame = () => {
   const [deck, setDeck] = useState<Deck>([]);
@@ -95,12 +96,12 @@ export const BlackjackGame = () => {
   };
 
   const getSuitText = (suit: string) => {
-    switch(suit) {
-      case 'SPADE': return '♠';
+    switch (suit) {
       case 'HEART': return '♥';
       case 'DIAMOND': return '♦';
       case 'CLUB': return '♣';
-      default: return suit;
+      case 'SPADE': return '♠';
+      default: return '';
     }
   };
 
@@ -111,9 +112,9 @@ export const BlackjackGame = () => {
   return (
     <div className="w-full max-w-[900px] mx-auto text-center bg-[#004d40] rounded-3xl p-8 shadow-2xl border-4 border-[#00796b]">
       <div className="absolute top-4 left-4">
-        <a href="/" className="px-6 py-3 bg-[#b71c1c] text-white rounded-xl hover:bg-[#d32f2f] transition-all duration-200 shadow-lg text-4xl font-bold border-2 border-[#ffcdd2] flex items-center">
+        <Link href="/" className="px-6 py-3 bg-[#b71c1c] text-white rounded-xl hover:bg-[#d32f2f] transition-all duration-200 shadow-lg text-4xl font-bold border-2 border-[#ffcdd2] flex items-center">
           <span className="mr-2">←</span> 메인으로
-        </a>
+        </Link>
       </div>
 
       <div className="mb-12 mt-10">
@@ -372,7 +373,7 @@ export const BlackjackGame = () => {
                 >
                   새 게임
                 </button>
-                <a 
+                <Link 
                   href="/"
                   style={{
                     padding: '1.5rem 3rem',
@@ -391,7 +392,7 @@ export const BlackjackGame = () => {
                   className="hover:bg-[#d32f2f] hover:scale-105"
                 >
                   메인으로
-                </a>
+                </Link>
               </div>
             </div>
           )}
