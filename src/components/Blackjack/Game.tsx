@@ -86,7 +86,7 @@ export const BlackjackGame = () => {
 
     setGameStatus('gameOver');
   };
-
+/*
   const getCardColor = (suit: string) => {
     return suit === 'HEART' || suit === 'DIAMOND' ? 'text-red-600' : 'text-gray-900';
   };
@@ -94,7 +94,7 @@ export const BlackjackGame = () => {
   const getCardBg = (suit: string) => {
     return suit === 'HEART' || suit === 'DIAMOND' ? 'bg-red-100' : 'bg-gray-100';
   };
-
+*/
   const getSuitText = (suit: string) => {
     switch (suit) {
       case 'HEART': return '♥';
